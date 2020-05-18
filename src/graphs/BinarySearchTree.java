@@ -60,13 +60,13 @@ public class BinarySearchTree {
     public static void printValuesASC(Node tempRoot){
 
         if(tempRoot.getLeft() != null){
-            printValuesDESC(tempRoot.getLeft());
+            printValuesASC(tempRoot.getLeft());
         }
 
         System.out.print(tempRoot.getValue() + " ");
 
         if(tempRoot.getRight() != null){
-            printValuesDESC(tempRoot.getRight());
+            printValuesASC(tempRoot.getRight());
         }
     }
 
