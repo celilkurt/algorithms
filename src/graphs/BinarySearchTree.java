@@ -1,12 +1,14 @@
 package graphs;
 
+import graphs.entity.BinaryTreeNode;
+
 import java.util.Random;
 
 public class BinarySearchTree {
 
     public static void main(String[] args){
 
-        Node root = createSampleTree(23);
+        BinaryTreeNode root = createSampleTree(23);
         printValuesDESC(root);
         System.out.println();
         printValuesASC(root);
@@ -14,19 +16,19 @@ public class BinarySearchTree {
 
     }
 
-    public static Node createSampleTree(int n){
+    public static BinaryTreeNode createSampleTree(int n){
         Random ran = new Random();
 
-        Node root = new Node(ran.nextInt(100));
+        BinaryTreeNode root = new BinaryTreeNode(ran.nextInt(100));
 
         while(n-- > 0){
-            addNode(root,new Node(ran.nextInt(100)));
+            addNode(root,new BinaryTreeNode(ran.nextInt(100)));
         }
 
         return root;
     }
 
-    public static void addNode(Node tempRoot,Node newNode){
+    public static void addNode(BinaryTreeNode tempRoot,BinaryTreeNode newNode){
 
         if(tempRoot.getValue() < newNode.getValue()){
             if(tempRoot.getRight() == null)
@@ -43,7 +45,7 @@ public class BinarySearchTree {
         }
     }
 
-    public static void printValuesDESC(Node tempRoot){
+    public static void printValuesDESC(BinaryTreeNode tempRoot){
 
         if(tempRoot.getRight() != null){
             printValuesDESC(tempRoot.getRight());
@@ -57,7 +59,7 @@ public class BinarySearchTree {
 
     }
 
-    public static void printValuesASC(Node tempRoot){
+    public static void printValuesASC(BinaryTreeNode tempRoot){
 
         if(tempRoot.getLeft() != null){
             printValuesASC(tempRoot.getLeft());
@@ -70,39 +72,4 @@ public class BinarySearchTree {
         }
     }
 
-}
-
-class Node{
-
-    private int value;
-    private Node right;
-    private Node left;
-
-    public Node(int value){
-        this.value = value;
-    }
-
-    public int getValue() {
-        return value;
-    }
-
-    public void setValue(int value) {
-        this.value = value;
-    }
-
-    public Node getRight() {
-        return right;
-    }
-
-    public void setRight(Node right) {
-        this.right = right;
-    }
-
-    public Node getLeft() {
-        return left;
-    }
-
-    public void setLeft(Node left) {
-        this.left = left;
-    }
 }
