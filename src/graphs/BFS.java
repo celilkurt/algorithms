@@ -10,5 +10,11 @@ package graphs;
  * @author asus
  */
 public class BFS {
+
+    public static void main(String[] args){
+
+        System.out.print("This is graph file");
+
+    }
     
 }
