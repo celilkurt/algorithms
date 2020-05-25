@@ -6,27 +6,6 @@ import java.util.Random;
 
 public class BinarySearchTree {
 
-    public static void main(String[] args){
-
-        BinaryTreeNode root = createSampleTree(23);
-        printValuesDESC(root);
-        System.out.println();
-        printValuesASC(root);
-
-
-    }
-
-    public static BinaryTreeNode createSampleTree(int n){
-        Random ran = new Random();
-
-        BinaryTreeNode root = new BinaryTreeNode(ran.nextInt(100));
-
-        while(n-- > 0){
-            addNode(root,new BinaryTreeNode(ran.nextInt(100)));
-        }
-
-        return root;
-    }
 
     public static void addNode(BinaryTreeNode tempRoot,BinaryTreeNode newNode){
 
