@@ -13,10 +13,6 @@ public class Algorithms {
     
     public static void main(String[] args) {
         
-        /*int[] arr = {46,23,46,2345,1,45,46,89690,46,45,46,2344,46,123,40,45};
-        MergeSort.mergeSort(arr, 0, arr.length);
-        System.out.println(Arrays.toString(arr));
-        */
         System.out.println(Fibonacci.findNthFibonacci(18975));
         
         //1902'ye kadarki sayıların asal olup olmadığını ve asal çarpanlarını yazdırır.

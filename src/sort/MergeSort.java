@@ -1,8 +1,19 @@
 
-package algorithms;
+package sort;
 
+
+import java.util.Arrays;
 
 public class MergeSort {
+
+    public static void main(String[] args){
+
+        int[] arr = {46,23,46,2345,1,45,46,89690,46,45,46,2344,46,123,40,45};
+        MergeSort.mergeSort(arr, 0, arr.length);
+        System.out.println(Arrays.toString(arr));
+
+    }
+
     
     public static void mergeSort(int[] arr , int p, int r){
      
