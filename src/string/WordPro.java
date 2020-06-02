@@ -16,13 +16,14 @@ public class WordPro {
 
 
         try {
-            Scanner sc = new Scanner(new File("C:\\Users\\asus\\Desktop\\names_10k.txt"));
+            Scanner sc = new Scanner(new File("C:\\Users\\asus\\Desktop\\romeoandjuliet.txt"));
             int[] countArr = new int[90-65+1];
 
             while(sc.hasNext()){
 
                 String str = sc.nextLine();
                 findCountOfLetters(countArr,str);
+
 
                 if(str.length() == 3)
                     letter_3.add(str);
