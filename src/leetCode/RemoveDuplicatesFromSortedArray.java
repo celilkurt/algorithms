@@ -11,7 +11,7 @@ public class RemoveDuplicatesFromSortedArray {
     public static void main(String[] args){
 
         int[] nums = {1,3,4,4,4,6,6,7,7,8,8};
-        int n = Solution.removeDuplicates(nums);
+        int n = removeDuplicates(nums);
 
         int meter = 0;
         while(meter < n){
@@ -20,8 +20,7 @@ public class RemoveDuplicatesFromSortedArray {
 
     }
 
-}
-class Solution {
+
     public static int removeDuplicates(int[] nums) {
 
         TreeSet<Integer> numSet = new TreeSet<>();
@@ -39,3 +38,5 @@ class Solution {
         return numSet.size();
     }
 }
+
+
