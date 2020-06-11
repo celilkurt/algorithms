@@ -1,4 +1,4 @@
-package leetCode;
+package leetCode.topInterviewQuestions;
 
 import java.util.Iterator;
 import java.util.TreeSet;
