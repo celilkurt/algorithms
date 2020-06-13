@@ -80,8 +80,24 @@ public class PrimeNumbers {
         
         return list;
     }
-    
-    
+
+
+    static void printPrime(int... numbers){
+
+        for(int num: numbers){
+            if(isPrime(num))
+                System.out.print(num + " ");
+
+        }System.out.println("");
+
+    }
+
+    //Generic sample: inputArray can be a string array or int array
+    public static < E > void printArray( E[] inputArray ){
+
+        for(E element: inputArray)
+            System.out.println(element);
+    }
     
     
     
