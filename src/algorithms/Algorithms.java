@@ -18,11 +18,11 @@ public class Algorithms {
         //1902'ye kadarki sayıların asal olup olmadığını ve asal çarpanlarını yazdırır.
         for(int i = 2; i < 26540; i++){
             System.out.println(i + " " + PrimeNumbers.isPrime(i));
-            System.out.println(PrimeNumbers.findPrimeFactors(i).toString());
+            //System.out.println(PrimeNumbers.findPrimeFactors(i).toString());
         
         }
         //Gönderilen değere kadar olan asal sayıları bulur.
-        System.out.println(PrimeNumbers.sieveOfEratos(291).toString());
+        //System.out.println(PrimeNumbers.sieveOfEratos(291).toString());
 
 
         
