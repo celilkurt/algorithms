@@ -15,7 +15,7 @@ class Calculator{
 
 
 
-object Solution {
+object Exception {
 
   def main(args: Array[String]) {
     var myCalculator=new Calculator();
