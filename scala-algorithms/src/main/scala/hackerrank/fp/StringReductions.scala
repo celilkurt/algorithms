@@ -1,9 +1,8 @@
 package hackerrank.fp
 
-import scala.::
 import scala.io.StdIn.readLine
 
-object Solution {
+object StringReductions {
 
   def main(args: Array[String]) {
 
