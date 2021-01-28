@@ -14,14 +14,8 @@ object MissingNumbers {
     val aFre = aList.groupBy(identity).view.mapValues(_.size)
     val bFre = bList.groupBy(identity).view.mapValues(_.size)
 
-    var missingNumbers: List[Int] = List()
+    val missingNumbers = (for(b <- bFre.keySet if (aFre.getOrElse(b,0) != bFre.getOrElse(b,0))) yield b)
 
-    for(b <- bFre.keySet){
-        if(aFre.getOrElse(b,0) != bFre.getOrElse(b,0)){
-          missingNumbers = missingNumbers :+ b
-        }
-    }
-
-    missingNumbers.sorted.foreach(num => print(num + " "))
+    missingNumbers.toList.sorted.foreach(num => print(num + " "))
   }
 }
