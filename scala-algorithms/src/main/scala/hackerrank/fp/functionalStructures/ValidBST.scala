@@ -1,4 +1,4 @@
-package hackerrank.fp
+package hackerrank.fp.functionalStructures
 
 import scala.io.StdIn.{readInt, readLine}
 

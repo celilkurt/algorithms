@@ -1,6 +1,4 @@
-package hackerrank.fp
-
-import scala.io.StdIn.{readInt, readLine}
+package hackerrank.fp.functionalStructures
 
 object DicePath {
 

@@ -1,8 +1,5 @@
 package hackerrank.fp
 
-import scala.util.control.Exception._
-
-
 class Calculator{
 
   def power(n: Int,p: Int): Double = {
