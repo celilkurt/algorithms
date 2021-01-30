@@ -4,10 +4,9 @@ import scala.io.StdIn.readLine
 
 object GCP {
 
-  def gcd(x: Int, y: Int): Int = {
-    if(y == 0) x else gcd(y,x%y)
+  def gcd(x: Int, y: Int): Int = if(y == 0) x else gcd(y,x%y)
 
-  }
+
 
 
   def acceptInputAndComputeGCD(pair:List[Int]) = {
