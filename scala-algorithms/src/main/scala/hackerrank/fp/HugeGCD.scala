@@ -4,12 +4,6 @@ import scala.io.StdIn.{readInt, readLine}
 
 object HugeGCD {
 
-  /***
-   * her bir çarpan 1000'den küçükmüş iki dizinin en büyük elemenanına göre asal sayılar hesaplanmalı,
-   * böylece ortak çarpanların bulunması daha aza mal olur.
-   *
-   */
-
   def main(args: Array[String]): Unit = {
 
     val n = readInt
@@ -18,10 +12,15 @@ object HugeGCD {
     val m = readInt
     val secondFactors = readLine.split(" ").map(e => e.toInt)
 
-    val maxFactor = (firstFactors ++ secondFactors).max
+    //val maxFactor = List(firstFactors.max , secondFactors.max).max
+    val firstNum = firstFactors.foldLeft(BigInt(1))((product,factor) => product*factor)
+    val secondNum = secondFactors.foldLeft(BigInt(1))((product,factor) => product*factor)
+
+    println(gcd(firstNum,secondNum)%1000000007)
 
   }
 
+  def gcd(x: BigInt, y: BigInt): BigInt = if(y == 0) x else gcd(y,x%y)
 
 
 }

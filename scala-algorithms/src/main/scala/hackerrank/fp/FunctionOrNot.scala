@@ -1,5 +1,6 @@
+package hackerrank.fp
+
 import scala.io.StdIn.{readInt, readLine}
-import scala.util.control.Breaks.{break, breakable}
 
 object FunctionOrNot {
 
