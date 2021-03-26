@@ -1,4 +1,4 @@
-package main.hackerrank.interviewPreparation;
+package main.hackerrank.interviewPreparation.stacksAndQueues;
 
 
 import java.util.Stack;

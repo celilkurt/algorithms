@@ -1,29 +1,47 @@
 package main.hackerrank.algorithms.graphs;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class JourneyToMoon {
 
-    static int journeyToMoon(int n, int[][] astronaut) {
+    // Hackerrank - Journey To The Moon
+    static long journeyToMoon(int n, int[][] astronaut) {
 
         int n_back = n;
         ArrayList<ArrayList<Integer>> cons = new ArrayList<>();
         boolean key;
         for (int[] pair: astronaut) {
             key = false;
-            for ( ArrayList<Integer> conList: cons ) {
+            for ( int i = 0; i < cons.size(); i++) {
+                ArrayList<Integer> conList = cons.get(i);
                 if (conList.contains(pair[0]) && conList.contains(pair[1])){
                     key = true;
                     break;
                 }else if (conList.contains(pair[0])){
+                    for (int j = i+1; j < cons.size(); j++){
+                        if(cons.get(j).contains(pair[1])) {
+                            conList.addAll(cons.get(j));
+                            conList.remove(Integer.valueOf(pair[1]));
+                            cons.remove(j);
+                            i--;
+                            break;
+                        }
+                    }
                     conList.add(pair[1]);
                     key = true;
                     break;
                 }else if(conList.contains(pair[1])){
+                    for (int j = i+1; j < cons.size(); j++){
+                        if(cons.get(j).contains(pair[0])) {
+                            conList.addAll(cons.get(j));
+                            conList.remove(Integer.valueOf(pair[0]));
+                            cons.remove(j);
+                            i--;
+                            break;
+                        }
+                    }
                     conList.add(pair[0]);
                     key = true;
                     break;
@@ -49,17 +67,18 @@ public class JourneyToMoon {
             sizeList.add(size);
         }
 
-        for (int i = 0; i < n; i++){
-            sizeList.add(1);
-        }
 
-        int count = 0;
-
+        long count = 0;
 
         for (int sizeOf : sizeList) {
             n_back -= sizeOf;
-            count += sizeOf * n_back;
+            count += (long) sizeOf * n_back;
 
+        }
+
+        if (n_back != 0) {
+            n_back--;
+            count += ((long) n_back *(n_back+1))/2;
         }
 
         return count;
@@ -88,7 +107,7 @@ public class JourneyToMoon {
             }
         }
 
-        int result = journeyToMoon(n, astronaut);
+        long result = journeyToMoon(n, astronaut);
 
         System.out.println(result);
 

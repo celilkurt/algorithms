@@ -1,4 +1,4 @@
-package main.hackerrank.interviewPreparation;
+package main.hackerrank.interviewPreparation.stacksAndQueues;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -10,22 +10,28 @@ public class LargestRectangle {
     static long largestRectangle(int[] h) {
 
         long max = 0;
-        long length = 0;
-        long height = Long.MAX_VALUE;
-        for (int i = h.length-1; i >= 0; i--) {
 
-            int n = h[i];
+        for (int j = 0; j < h.length-1; j++){
+            long length = 0;
+            long height = Long.MAX_VALUE;
 
-            length++;
-            if(n < height){
-                height = n;
+
+            for (int i = h.length-1; i >= 0; i--) {
+                int n = h[i];
+
+                length++;
+                if(n < height){
+                    height = n;
+                }
+                long temp = height*length;
+                if(temp > max) {
+                    max = temp;
+                }
+
             }
-            long temp = height*length;
-            if(temp > max) {
-                max = temp;
-            }
-
         }
+
+
 
 
         return max;
