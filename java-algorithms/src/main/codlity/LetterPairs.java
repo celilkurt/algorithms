@@ -1,10 +1,14 @@
-package codlity;
+package main.codlity;
 
-import javax.swing.text.html.HTMLDocument;
 import java.util.Iterator;
 import java.util.Stack;
 
 public class LetterPairs {
+
+    public static void main(String[] args) {
+
+        String result = solution("ABDBAC");
+    }
 
     /***
      * Aşağıdaki belirtilen harf çiftlerinden birbirlerine komşu olanlar silinir
@@ -19,7 +23,7 @@ public class LetterPairs {
      * Çıktı: ""
      *
      * ***/
-    public String solution(String S){
+    public static String solution(String S){
 
         String ansStr = "";
         Stack<Character> stack = new Stack<>();

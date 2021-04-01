@@ -1,6 +1,6 @@
 
 
-package algorithms;
+package main.algorithms;
 
 import java.util.ArrayList;
 import java.util.Arrays;

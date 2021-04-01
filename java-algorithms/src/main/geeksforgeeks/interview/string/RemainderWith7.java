@@ -1,6 +1,4 @@
-package geeksforgeeks.interview.string;
-
-import java.math.BigInteger;
+package main.geeksforgeeks.interview.string;
 
 public class RemainderWith7 {
 

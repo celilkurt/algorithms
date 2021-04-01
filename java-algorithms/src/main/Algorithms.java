@@ -1,7 +1,7 @@
 package main;
 
-import codlity.Equality;
 
+import main.codlity.Equality;
 
 public class Algorithms {
 

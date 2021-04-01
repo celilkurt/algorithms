@@ -7,6 +7,9 @@ import java.util.Scanner;
 public class JourneyToMoon {
 
     // Hackerrank - Journey To The Moon
+    /*
+    * Graph başlığı altındaydı ama graph'sız çözdüm.
+    * */
     static long journeyToMoon(int n, int[][] astronaut) {
 
         int n_back = n;

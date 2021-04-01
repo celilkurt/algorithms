@@ -1,5 +1,5 @@
 
-package sort;
+package main.sort;
 
 
 import java.util.Arrays;

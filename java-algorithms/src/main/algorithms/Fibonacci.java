@@ -1,5 +1,5 @@
 
-package algorithms;
+package main.algorithms;
 
 import java.math.BigInteger;
 import java.util.ArrayList;

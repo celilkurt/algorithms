@@ -1,4 +1,4 @@
-package codlity;
+package main.codlity;
 
 import java.util.Arrays;
 

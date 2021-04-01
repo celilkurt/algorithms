@@ -1,4 +1,4 @@
-package sort;
+package main.sort;
 
 import java.io.File;
 import java.io.FileNotFoundException;
