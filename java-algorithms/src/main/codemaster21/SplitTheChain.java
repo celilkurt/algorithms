@@ -1,16 +1,18 @@
-package main.codlity;
+package main.codemaster21;
 
 public class SplitTheChain {
 
 
     public static void main(String[] args) {
 
-
+        /*
         int n = 100000;
         int[] arr = new int[n];
         for (int i = 0; i < n; i++) arr[i] = i;
+*/
+        int[] A = {5,3,1,2,11,12,1,11};
 
-        int result = solution(arr);
+        int result = solution(A);
         System.out.println(result);
 
 
@@ -23,7 +25,7 @@ public class SplitTheChain {
         int minCost = A[1] + findSecondMin(A, 3);
 
         int len = A.length;
-        for (int i = 3; i < len-2; i++) {
+        for (int i = 2; i < len-2; i++) {
 
             int newCost = A[i] + findSecondMin(A, i+2);
 

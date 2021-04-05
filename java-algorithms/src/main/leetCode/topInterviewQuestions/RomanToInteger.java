@@ -1,4 +1,4 @@
-package leetCode.topInterviewQuestions;
+package main.leetCode.topInterviewQuestions;
 
 public class RomanToInteger {
 
