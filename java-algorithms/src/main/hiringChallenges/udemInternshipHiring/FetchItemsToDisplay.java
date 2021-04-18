@@ -1,48 +1,16 @@
-package main;
+package main.hiringChallenges.udemInternshipHiring;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
 
-public class solution {
-
-
-    public static List<String> fetchItemsToDisplay(List<List<String>> items, int sortParameter, int sortOrder, int itemsPerPage, int pageNumber) {
-
-        if (sortOrder == 0) {
-            sortOrder = -1;
-        }
-
-        int finalSortOrder = sortOrder;
-        items.sort(new Comparator<List<String>>() {
-            @Override
-            public int compare(List<String> strings, List<String> t1) {
-
-                if (sortParameter > 0) {
-                    return finalSortOrder*Integer.valueOf(strings.get(sortParameter)).compareTo(Integer.valueOf(t1.get(sortParameter)));
-                } else {
-                    return finalSortOrder *strings.get(sortParameter).compareTo(t1.get(sortParameter));
-                }
-            }
-        });
-
-        List<String> retVal = new ArrayList<>();
-        int len = items.size();
-        for (int i = itemsPerPage*(pageNumber+1); i < len; i++) {
-            retVal.add(items.get(i).get(0));
-        }
-
-
-        return retVal;
-
-    }
+public class FetchItemsToDisplay {
 
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
@@ -76,6 +44,35 @@ public class solution {
 
 
         bufferedReader.close();
+    }
+
+
+
+
+    public static List<String> fetchItemsToDisplay(List<List<String>> items, int sortParameter, int sortOrder, int itemsPerPage, int pageNumber) {
+
+        if (sortOrder == 0) {
+            sortOrder = -1;
+        }
+
+        int finalSortOrder = sortOrder;
+        items.sort((strings, t1) -> {
+            if (sortParameter > 0) {
+                return finalSortOrder * Integer.valueOf(strings.get(sortParameter)).compareTo(Integer.valueOf(t1.get(sortParameter)));
+            } else {
+                return finalSortOrder * strings.get(sortParameter).compareTo(t1.get(sortParameter));
+            }
+        });
+
+        List<String> retVal = new ArrayList<>();
+        int len = items.size();
+        for (int i = itemsPerPage*(pageNumber+1); i < len; i++) {
+            retVal.add(items.get(i).get(0));
+        }
+
+
+        return retVal;
+
     }
 
 

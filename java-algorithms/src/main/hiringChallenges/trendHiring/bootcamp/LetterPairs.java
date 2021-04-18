@@ -1,6 +1,5 @@
-package main.codlity;
+package main.hiringChallenges.trendHiring.bootcamp;
 
-import java.util.Iterator;
 import java.util.Stack;
 
 public class LetterPairs {
@@ -25,7 +24,7 @@ public class LetterPairs {
      * ***/
     public static String solution(String S){
 
-        String ansStr = "";
+
         Stack<Character> stack = new Stack<>();
 
         char c;
@@ -69,12 +68,12 @@ public class LetterPairs {
             }
         }
 
-        Iterator itr = stack.iterator();
-        while(itr.hasNext()){
-            ansStr += itr.next();
+        StringBuilder ansStr = new StringBuilder(stack.size());
+        for (Character character : stack) {
+            ansStr.append(character);
         }
 
-        return ansStr;
+        return ansStr.toString();
     }
 
 }

@@ -1,3 +1,5 @@
+package main.hiringChallenges.udemInternshipHiring;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -5,7 +7,33 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-class Result {
+
+/**
+ *
+ * Örnek girdi: "Hackerrank", "rnk"
+ * Örnek çıktı: 4
+ *
+ * "rnk" yi içeren en küçük substring "rank" tir ve uzunluğu 4'tür.
+ *
+ * */
+public class CircularSubstringCompetition {
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+
+        String target = bufferedReader.readLine();
+
+        String source = bufferedReader.readLine();
+
+        int result = circularSubstringCompetition(target, source);
+        System.out.println(result);
+
+
+        bufferedReader.close();
+    }
+
+
+
 
     /*
      * Complete the 'circularSubstringCompetition' function below.
@@ -61,22 +89,5 @@ class Result {
 
         return 0;
 
-    }
-
-}
-
-public class Solution {
-    public static void main(String[] args) throws IOException {
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-
-        String target = bufferedReader.readLine();
-
-        String source = bufferedReader.readLine();
-
-        int result = Result.circularSubstringCompetition(target, source);
-        System.out.println(result);
-
-
-        bufferedReader.close();
     }
 }

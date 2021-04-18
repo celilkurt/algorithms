@@ -1,4 +1,4 @@
-package main.codlity;
+package main.hiringChallenges.trendHiring.bootcamp;
 
 public class DivideOrSubtract {
 

@@ -1,4 +1,4 @@
-package main.hackerrank.hiringChallenge;
+package main.hiringChallenges.migHiring;
 
 import java.util.Arrays;
 import java.util.HashMap;

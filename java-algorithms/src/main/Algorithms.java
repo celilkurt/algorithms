@@ -1,7 +1,7 @@
 package main;
 
 
-import main.codlity.Equality;
+import main.hiringChallenges.trendHiring.bootcamp.Equality;
 
 public class Algorithms {
 
