@@ -1,6 +1,7 @@
 package main.hackerrank.interviewPreparation;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Candies {
@@ -8,33 +9,26 @@ public class Candies {
     static long candies(int n, int[] arr) {
 
         int[] candies = new int[n];
-        int min = 0;
+        candies[0] = 1;
+
 
         for (int i = 1; i < n; i++) {
 
-            if (arr[i] > arr[i-1]) {
+            if (arr[i-1] < arr[i]) {
                 candies[i] = candies[i-1]+1;
-            } else if (arr[i] < arr[i-1]) {
-                candies[i] = candies[i-1]-1;
-            } else {
-                candies[i] = min;
+            } else /*if (arr[i-1] > arr[i])*/ {
+                candies[i] = 1;
+                for (int j = i-1; j > 0; j--) {
+                    if (arr[j] < arr[j-1]) {
+                        candies[j-1] += 1;
+                    } else {
+                        break;
+                    }
+                }
             }
-
-            if (candies[i] < min) {
-                min = candies[i];
-            }
-
         }
 
-        long sum = 0L;
-
-        for (int num: candies) {
-            sum += num;
-        }
-
-        sum += (long) n *(Math.abs(min) + 1);
-
-        return sum;
+        return Arrays.stream(candies).sum();
     }
 
     private static final Scanner scanner = new Scanner(System.in);

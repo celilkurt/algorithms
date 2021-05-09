@@ -48,11 +48,9 @@ public class GroupTransaction {
         ArrayList<TransactionWithOccur> sortedList = new ArrayList<>(occurs.values());
         Collections.sort(sortedList);
         List<String> sortedStrList = new ArrayList<>(sortedList.size());
-        sortedList.stream().forEach(elem -> { sortedStrList.add(elem.transaction + " " + elem.count);
+        sortedList.forEach(elem -> { sortedStrList.add(elem.transaction + " " + elem.count);
                 }
         );
-
-
 
         return sortedStrList;
 
