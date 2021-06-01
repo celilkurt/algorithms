@@ -54,6 +54,13 @@ public class LongestSubstringWithoutRepeatingCharacters {
         return max;
     }
 
+    public static int lengthOfLongestSubstringEfficent(String s) {
+
+        int left, right, max;
+
+        return 0;
+
+    }
 
     public static void main(String[] args) {
         System.out.println(lengthOfLongestSubstring("aab"));
