@@ -4,6 +4,8 @@ public class SherlockAndAnagrams {
 
     public static void main(String[] args) {
 
+
+
     }
 
 
