@@ -16,22 +16,15 @@ public class FindDisappearedNumbers {
 
         int len = nums.length;
         List<Integer> numsNotAppear = new ArrayList<>();
-        int cursor = 0;
+        boolean[] isAppear = new boolean[len+1];
+
+        for (int num: nums) {
+            isAppear[num] = true;
+        }
 
         for (int i = 1; i <= len; i++) {
 
-            if (cursor < len) {
-
-                if (nums[cursor] != i) {
-
-                    if (nums[cursor] > i) {
-                        numsNotAppear.add(i);
-                        cursor--;
-                    }
-                }
-                cursor++;
-
-            } else {
+            if (!isAppear[i]) {
                 numsNotAppear.add(i);
             }
         }
