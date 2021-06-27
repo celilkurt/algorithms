@@ -1,9 +1,6 @@
 package main.hiringChallenges.migHiring;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * List'in içerdiği elemanların sıklığı hesaplanacak ve en sık satın alınan ürünlerden,
@@ -27,31 +24,47 @@ public class FeaturedProduct {
      * */
     public static String featuredProduct(List<String> products) {
 
+        if (products.isEmpty()) return null;
+
+        HashMap<String, Integer> occurs = getOccurenceMapOfProduct(products);
+
+        List<String> elemsWithMaxOccur = getElemsWithMaxOccurs(occurs);
+
+        String minByAlphabetic = elemsWithMaxOccur.stream().max(String::compareTo).get();
+
+        return minByAlphabetic;
+
+    }
+
+
+
+
+    public static HashMap<String, Integer> getOccurenceMapOfProduct(List<String> products) {
+
         HashMap<String, Integer> occurs = new HashMap<>();
 
         int currentOccur;
         for (String product: products) {
-
             currentOccur = occurs.getOrDefault(product, 0);
             occurs.put(product, currentOccur+1);
         }
 
-        int maxOccur = 0;
-        for (int occur: occurs.values()) {
-            if (occur > maxOccur) {
-                maxOccur = occur;
+        return occurs;
+
+    }
+
+    public static List<String> getElemsWithMaxOccurs(HashMap<String, Integer> occurs) {
+
+        int maxOccur = occurs.values().stream().max(Integer::compareTo).get();
+        List<String> elemsWithMaxOccur = new ArrayList<>();
+
+        for (Map.Entry<String, Integer> entry: occurs.entrySet()) {
+
+            if (entry.getValue() == maxOccur) {
+                elemsWithMaxOccur.add(entry.getKey());
             }
         }
 
-        String minStr = null;
-
-        for (Map.Entry<String, Integer> entry: occurs.entrySet()) if (entry.getValue() == maxOccur) {
-
-                if (minStr == null || minStr.compareTo(entry.getKey()) < 0) {
-                    minStr = entry.getKey();
-                }
-        }
-
-        return minStr;
+        return elemsWithMaxOccur;
     }
 }
